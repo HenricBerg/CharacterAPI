@@ -23,9 +23,9 @@ H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Brow
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\BrowserGUI.pdb
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\BrowserGUI.csproj.CopyComplete
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\BrowserGUI.csprojAssemblyReference.cache
-H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Home\Character.g.cshtml.cs
-H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Home\Success.g.cshtml.cs
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Home\Failed.g.cshtml.cs
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\bin\Debug\netcoreapp2.1\CharacterAPI.dll
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\bin\Debug\netcoreapp2.1\CharacterAPI.pdb
+H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Home\CreateCharacter.g.cshtml.cs
+H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs

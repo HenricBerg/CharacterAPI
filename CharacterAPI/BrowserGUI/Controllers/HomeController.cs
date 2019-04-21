@@ -11,18 +11,20 @@ namespace BrowserGUI.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Character()
+        public IActionResult CreateCharacter()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Character(CharacterModel formInput)
+        public IActionResult CreateCharacter(CharacterModel formInput)
         {
-            if (XmlAccess.SaveToFile(formInput))
+            string response = XmlAccess.SaveToFile(formInput);
+
+            if (response == null)
                 return RedirectToAction("Success");
             else
-                return RedirectToAction("Failed");
+                return RedirectToAction("Failed", "Home", new { error = response });
 
 
         }
@@ -32,8 +34,14 @@ namespace BrowserGUI.Controllers
             return View();
         }
 
-        public IActionResult Failed()
+        public IActionResult Index()
         {
+            return View();
+        }
+
+        public IActionResult Failed(string error)
+        {
+            ViewBag.Error = error;
             return View();
         }
 

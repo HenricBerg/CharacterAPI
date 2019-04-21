@@ -33,7 +33,7 @@ namespace CharacterAPI.DataAccess
             return character;
         }
 
-        public static bool SaveToFile(CharacterModel character)
+        public static string SaveToFile(CharacterModel character)
         {
 
             try
@@ -45,12 +45,12 @@ namespace CharacterAPI.DataAccess
                     serializer.Serialize(stream, character);
                 }
 
-                return true;
+                return null;
 
             }
-            catch 
+            catch (Exception ex)
             {
-                return false;
+                return ex.Message;
             }
         }
     }
