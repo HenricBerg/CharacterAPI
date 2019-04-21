@@ -23,10 +23,6 @@ body {
     width: 100%;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
-}
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
@@ -35,3 +31,70 @@ body {
         display: none;
     }
 }
+
+#black {
+    border-color: black;
+    color: black;
+
+}
+
+
+
+#body-gray {
+    background-color: dimgrey;
+}
+
+.control-label{
+    color: black;
+}
+
+.text-input {
+    background-color: gray;
+    color: black;
+    border-color: black;
+    align-self: center;
+   float: left;
+    width: 70%;
+}
+
+.btn-input {
+    background-color: gray;
+    color: black;
+    border-color: black;
+}
+
+.invisible{
+    display: none;
+    opacity: 0;
+}
+
+.character-text {
+    text-align: center;
+   
+}
+
+.element-center{
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
+.body-content{
+    width: 100%;
+}
+
+.btn-creator{
+    font-weight: bold;
+    float: right;
+    width: 30%;
+}
+
+#IntroText{
+    text-align: left;
+    float: left;
+}
+
+
+
+

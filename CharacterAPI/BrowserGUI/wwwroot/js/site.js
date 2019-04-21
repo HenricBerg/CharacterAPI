@@ -3,12 +3,18 @@
 
 // Write your JavaScript code.
 
-function ReturnToHome(seconds) {
+function ReturnToHome(seconds)
+{
 
     var milliSec = seconds * 1000;
 
     setTimeout(function () {
-        window.location.href = "Character";
+        window.location.href = "Index";
     }, milliSec);
     
+}
+
+function ToggleVisibility(element)
+{
+    element.toggleClass("invisible");
 }
