@@ -53,6 +53,8 @@ body {
     color: black;
     border-color: black;
     align-self: center;
+   float: left;
+    width: 70%;
 }
 
 .btn-input {
@@ -63,6 +65,7 @@ body {
 
 .invisible{
     display: none;
+    opacity: 0;
 }
 
 .character-text {
@@ -80,5 +83,18 @@ body {
 .body-content{
     width: 100%;
 }
+
+.btn-creator{
+    font-weight: bold;
+    float: right;
+    width: 30%;
+}
+
+#IntroText{
+    text-align: left;
+    float: left;
+}
+
+
 
 
