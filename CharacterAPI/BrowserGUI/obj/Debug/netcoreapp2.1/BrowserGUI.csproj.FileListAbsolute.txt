@@ -25,3 +25,5 @@ H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Brow
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\BrowserGUI.csprojAssemblyReference.cache
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Home\Character.g.cshtml.cs
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Home\Success.g.cshtml.cs
+H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Home\Failed.g.cshtml.cs
