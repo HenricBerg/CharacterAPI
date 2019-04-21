@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,6 +9,7 @@ namespace CharacterAPI.Models
     public class CharacterModel
     {
 
+        
         public string Token { get; set; } = "N/A";
         public string CharacterName { get; set; } = "N/A";
         public string Class { get; set; } = "N/A";
