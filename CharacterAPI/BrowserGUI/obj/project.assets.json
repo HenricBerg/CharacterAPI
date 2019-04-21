@@ -4615,6 +4615,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "CharacterAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Microsoft.NETCore.App": "2.1.0"
+        },
+        "compile": {
+          "bin/placeholder/CharacterAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CharacterAPI.dll": {}
+        }
       }
     }
   },
@@ -12521,10 +12534,16 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "CharacterAPI/1.0.0": {
+      "type": "project",
+      "path": "../CharacterAPI/CharacterAPI.csproj",
+      "msbuildProject": "../CharacterAPI/CharacterAPI.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "CharacterAPI >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
@@ -12563,7 +12582,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "H:\\Projekt\\D&D\\CharacterAPI\\CharacterAPI\\CharacterAPI\\CharacterAPI.csproj": {
+              "projectPath": "H:\\Projekt\\D&D\\CharacterAPI\\CharacterAPI\\CharacterAPI\\CharacterAPI.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -4,8 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using BrowserGUI.Models;
-using BrowserGUI.DataAccess;
+using CharacterAPI.Models;
+using CharacterAPI.DataAccess;
 
 namespace BrowserGUI.Controllers
 {

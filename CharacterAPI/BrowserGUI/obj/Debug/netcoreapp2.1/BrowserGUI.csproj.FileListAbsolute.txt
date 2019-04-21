@@ -27,3 +27,5 @@ H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razo
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Home\Success.g.cshtml.cs
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Home\Failed.g.cshtml.cs
+H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\bin\Debug\netcoreapp2.1\CharacterAPI.dll
+H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\bin\Debug\netcoreapp2.1\CharacterAPI.pdb

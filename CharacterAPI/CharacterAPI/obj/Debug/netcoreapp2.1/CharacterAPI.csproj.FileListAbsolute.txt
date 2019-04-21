@@ -3,7 +3,6 @@ H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\bin\Debug\netcoreapp2.1\Ch
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\bin\Debug\netcoreapp2.1\CharacterAPI.runtimeconfig.dev.json
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\bin\Debug\netcoreapp2.1\CharacterAPI.dll
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\bin\Debug\netcoreapp2.1\CharacterAPI.pdb
-H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\CharacterAPI.csprojAssemblyReference.cache
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\CharacterAPI.csproj.CoreCompileInputs.cache
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\CharacterAPI.RazorAssemblyInfo.cache
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\CharacterAPI.RazorAssemblyInfo.cs
@@ -12,3 +11,4 @@ H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\Ch
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\CharacterAPI.RazorTargetAssemblyInfo.cache
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\CharacterAPI.dll
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\CharacterAPI.pdb
+H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\CharacterAPI.csprojAssemblyReference.cache

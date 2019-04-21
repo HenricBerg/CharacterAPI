@@ -14,17 +14,22 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #line 1 "H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\Views\_ViewImports.cshtml"
-using BrowserGUI;
+using CharacterAPI;
 
 #line default
 #line hidden
 #line 2 "H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\Views\_ViewImports.cshtml"
-using BrowserGUI.Models;
+using CharacterAPI.Models;
+
+#line default
+#line hidden
+#line 3 "H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\Views\_ViewImports.cshtml"
+using BrowserGUI;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c40778b1f97dbc3b66771af2879a5b1f0d0041a9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ecec9ec0bd0c21a1e4ab2728b143defd261cad94", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

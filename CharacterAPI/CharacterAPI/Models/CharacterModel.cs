@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BrowserGUI.Models
+namespace CharacterAPI.Models
 {
     public class CharacterModel
     {
