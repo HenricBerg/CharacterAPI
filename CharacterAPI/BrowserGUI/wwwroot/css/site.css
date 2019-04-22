@@ -70,6 +70,21 @@ body {
     position: absolute;
 }
 
+.btn-equipment {
+    background-color: gray;
+    color: black;
+    border-color: black;
+    height: 33px;
+    
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3px; 
+}
+    .btn-equipment:hover {
+        background-color: navy;
+        color: lightgray;
+    }
+
 .invisible{
     display: none;
     opacity: 0;
@@ -88,7 +103,7 @@ body {
 }
 
 .work-area{
-    height: 25vh;
+    height: 35vh;
 }
 
 .body-content{
@@ -99,7 +114,7 @@ body {
     font-weight: bold;
     clear: left;
     float: right;
-    width: 30%;
+  
 }
 
 #IntroText{
@@ -108,6 +123,10 @@ body {
 }
 
 
+.small-text-input{
+    width: 90px;
+    float: left;
+}
 
 
 

@@ -47,7 +47,8 @@ namespace CharacterAPI.Models
         public string Eyes { get; set; } = "N/A";
         public string Skin { get; set; } = "N/A";
         public string Hair { get; set; } = "N/A";
-        public List<string> Allies { get; set; } = new List<string>();
+        public List<string> SkillProficiencies { get; set; } = new List<string>(); //
+        public List<string> FeatsAndTraits { get; set; } = new List<string>(); //
         public List<string> MiscNotes { get; set; } = new List<string>();
         public List<string> AttacksAndSpells { get; set; } = new List<string>();
         public List<string> Equipment { get; set; } = new List<string>();

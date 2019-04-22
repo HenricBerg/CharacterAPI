@@ -11,4 +11,3 @@ H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\Ch
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\CharacterAPI.RazorTargetAssemblyInfo.cache
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\CharacterAPI.dll
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\CharacterAPI.pdb
-H:\Projekt\D&D\CharacterAPI\CharacterAPI\CharacterAPI\obj\Debug\netcoreapp2.1\CharacterAPI.csprojAssemblyReference.cache
