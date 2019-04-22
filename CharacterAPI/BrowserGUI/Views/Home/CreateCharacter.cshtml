@@ -9,16 +9,17 @@
 <h4 class="character-text" id="black">Step into the multiverse</h4>
 <hr id="black"/>
 <div class="row">
-    <div class="col-md-4 col-md-offset-4 element-center ">
+    <div class="col-md-4 col-md-offset-4 element-center work-area">
         <div>
             <p id="mainText"></p>
 
             <p id="IntroText">
                 <b>Greetings traveller,</b>
                 <br />
-                To proceed, you will need to answer some personal questions.
+                To proceed, you will need to answer some questions of a very personal nature.
                 <br />
-                Agreed?
+                <br />
+                Do you agree to this?
             </p>
 
         </div>
@@ -26,28 +27,43 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
-                <input asp-for="Token" class="form-control text-input invisible text-input invisible" />
+                <input asp-for="Token" placeholder="Character ID token (remember this)" class="form-control text-input invisible text-input invisible" />
                 <span asp-validation-for="Token" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input asp-for="CharacterName" class="form-control text-input invisible" />
+                <input asp-for="CharacterName" placeholder="Character Name" class="form-control text-input invisible" />
                 <span asp-validation-for="CharacterName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input asp-for="PlayerName" class="form-control text-input invisible" />
+                <input asp-for="PlayerName" placeholder="Player Name" class="form-control text-input invisible" />
                 <span asp-validation-for="PlayerName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input asp-for="Race" class="form-control text-input invisible" />
-                <span asp-validation-for="Race" class="text-danger"></span>
+                <select asp-for="Race" class="form-control text-input invisible" id="Race">
+                    <option value="" disabled selected>Class</option>
+                    <option>Human</option>
+                    <option>Dwarf</option>
+                    <option>Elf</option>
+                    <option>Halfling</option>
+                </select>
             </div>
-            <div class="form-group">
-                <input asp-for="Class" class="form-control text-input invisible" />
-                <span asp-validation-for="Class" class="text-danger"></span>
+            <div class="form-group ">
+                <select asp-for="Class" class="form-control text-input invisible" id="Class">
+                    <option value="" disabled selected>Race</option>
+                    <option>Fighter</option>
+                    <option>Wizard</option>
+                    <option>Cleric</option>
+                    <option>Ranger</option>
+                </select>
             </div>
-            <div class="form-group">
-                <input asp-for="Level" class="form-control text-input invisible" />
-                <span asp-validation-for="Level" class="text-danger"></span>
+            <div class="form-group ">
+                <select asp-for="Level" class="form-control text-input invisible" id="Level">
+                    <option value="" disabled selected>Level</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
             </div>
             <div class="form-group">
                 <input asp-for="Background" class="form-control text-input invisible" />
@@ -57,9 +73,9 @@
                 <input asp-for="Alignment" class="form-control text-input invisible" />
                 <span asp-validation-for="Alignment" class="text-danger"></span>
             </div>
-
+            
             <div class="form-group">
-                <input asp-for="ExperiencePoints" class="form-control text-input invisible" />
+                <input  placeholder="Total experience (0 or leave blank if new character)" class="form-control text-input invisible" />
                 <span asp-validation-for="ExperiencePoints" class="text-danger"></span>
             </div>
 
@@ -196,7 +212,7 @@
 
             </div>
         </form>
-        <button onclick=CreatorStep() class="btn btn-default btn-input btn-creator">Agreed...</button>
+        <button onclick=CreatorStep() id="NextButton" class="btn btn-default btn-input btn-creator">Agreed...</button>
 
     </div>
 </div>
