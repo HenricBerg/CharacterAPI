@@ -36,10 +36,12 @@ namespace CharacterAPI.DataAccess
         public static string SaveToFile(CharacterModel character)
         {
 
+            var token = DataFixer.FixToken(character.Token);
+
             try
             {
                 var serializer = new XmlSerializer(typeof(CharacterModel));
-                string path = @"bin/Characters/"+character.Token+".xml";
+                string path = @"bin/Characters/"+ token + ".xml";
                 using (var stream = new StreamWriter(path))
                 {
                     serializer.Serialize(stream, character);

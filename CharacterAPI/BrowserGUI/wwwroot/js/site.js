@@ -5,7 +5,7 @@
 
 function ReturnToHome(seconds)
 {
-
+   
     var milliSec = seconds * 1000;
 
     setTimeout(function () {
@@ -14,7 +14,3 @@ function ReturnToHome(seconds)
     
 }
 
-function ToggleVisibility(element)
-{
-    element.toggleClass("invisible");
-}

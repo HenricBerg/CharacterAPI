@@ -17,29 +17,26 @@ namespace CharacterAPI.Models
         public string Background { get; set; } = "N/A";
         public string Alignment { get; set; } = "N/A";
         public string PlayerName { get; set; } = "N/A";
-        public int ExperiencePoints { get; set; } = 0;
+        public string ExperiencePoints { get; set; } = "N/A";
         public string Race { get; set; } = "N/A";
-        public int Strength { get; set; } = 0;
-        public int Dexterity { get; set; } = 0;
-        public int Constitution { get; set; } = 0;
-        public int Intelligence { get; set; } = 0;
-        public int Wisdom { get; set; } = 0;
-        public int Charisma { get; set; } = 0;
-        public int PassiveWisdom { get; set; } = 0;
-        public int ArmorClass { get; set; } = 0;
-        public int Initiative { get; set; } = 0;
+        public string Strength { get; set; } = "N/A";
+        public string Dexterity { get; set; } = "N/A";
+        public string Constitution { get; set; } = "N/A";
+        public string Intelligence { get; set; } = "N/A";
+        public string Wisdom { get; set; } = "N/A";
+        public string Charisma { get; set; } = "N/A";
+        public string ArmorClass { get; set; } = "N/A";
+        public string Initiative { get; set; } = "N/A";
         public string Speed { get; set; } = "N/A";
-        public int CurrentHP { get; set; } = 0;
-        public int MaxHP { get; set; } = 0;
-        public int TempHP { get; set; } = 0;
-        public string HitDiceType { get; set; } = "N/A";
-        public string HitDiceTotal { get; set; } = "N/A";
-        public int DeathSaveSucc { get; set; } = 0;
-        public int DeathSaveFail { get; set; } = 0;
-        public int CP { get; set; } = 0;
-        public int SP { get; set; } = 0;
-        public int GP { get; set; } = 0;
-        public int PP { get; set; } = 0;
+        public string CurrentHP { get; set; } = "N/A";
+        public string MaxHP { get; set; } = "N/A";
+        public string HitDice { get; set; } = "N/A";
+        public string DeathSaveSucc { get; set; } = "N/A";
+        public string DeathSaveFail { get; set; } = "N/A";
+        public string CP { get; set; } = "N/A";
+        public string SP { get; set; } = "N/A";
+        public string GP { get; set; } = "N/A";
+        public string PP { get; set; } = "N/A";
         public string Backstory { get; set; } = "N/A";
         public string Age { get; set; } = "N/A";
         public string Height { get; set; } = "N/A";
@@ -47,13 +44,17 @@ namespace CharacterAPI.Models
         public string Eyes { get; set; } = "N/A";
         public string Skin { get; set; } = "N/A";
         public string Hair { get; set; } = "N/A";
-        public List<string> SkillProficiencies { get; set; } = new List<string>(); //
-        public List<string> FeatsAndTraits { get; set; } = new List<string>(); //
+        public List<string> SkillProficiencies { get; set; } = new List<string>();
+        public List<string> FeatsAndTraits { get; set; } = new List<string>();
         public List<string> MiscNotes { get; set; } = new List<string>();
         public List<string> AttacksAndSpells { get; set; } = new List<string>();
         public List<string> Equipment { get; set; } = new List<string>();
 
+        public CharacterModel() { }
 
+        
 
     }
+
+    
 }

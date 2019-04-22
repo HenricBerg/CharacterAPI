@@ -1,25 +1,44 @@
 ﻿var counter = 0;
 var characterModel = {
-    Token: "henbeh151",
-    CharacterName: "Khargas",
-    PlayerName: "Henric",
-    Race: "Dwarf",
-    Class: "Druid",
-    Level: "4",
-    ExperiencePoints: "1234",
-    Background: "Soldier",
-    Backstory: "Lived in a fort.",
-    Alignment: "Neutral good",
-    Age: "143",
-    Height: "1,4m",
-    Weight: "93kg",
-    Eyes: "Brown",
-    Skin: "Fair",
-    Hair: "Brown",
-    Equipment: ["Goat Horn (intrument)", "Stig (Mouse/Pet)"]
-
-
-
+    Token: '',
+    CharacterName: '',
+    Class: '',
+    Level: '',
+    Background: '',
+    Alignment: '',
+    PlayerName: '',
+    ExperiencePoints: '',
+    Race: '',
+    Strength: '',
+    Dexterity: '',
+    Constitution: '',
+    Intelligence: '',
+    Wisdom: '',
+    Charisma: '',
+    ArmorClass: '',
+    Initiative: '',
+    Speed: '',
+    CurrentHP: '',
+    MaxHP: '',
+    HitDice: '',
+    DeathSaveSucc: '',
+    DeathSaveFail: '',
+    CP: '',
+    SP: '',
+    GP: '',
+    PP: '',
+    Backstory: '',
+    Age: '12',
+    Height: '',
+    Weight: '',
+    Eyes: '',
+    Skin: '',
+    Hair: '',
+    SkillProficiencies: [],
+    FeatsAndTraits: [],
+    MiscNotes: [],
+    AttacksAndSpells: [],
+    Equipment: []
 };
 
 
@@ -27,9 +46,9 @@ function CreatorStep() {
     counter++;
 
     if (counter == 1) {
-        document.getElementById("NextButton").innerHTML = "Go on...";
         Hide($("#mainText"));
         Hide($("#IntroText"));
+        Hide($("#NextButton"));
         document.getElementById("mainText").innerHTML = "<b>Good. Thank you.</b>";
         Show($("#mainText"));
 
@@ -41,6 +60,7 @@ function CreatorStep() {
                 Show($("#CharacterName"));
                 Show($("#PlayerName"));
                 document.getElementById("NextButton").innerHTML = "I know my own name!";
+                Show($("#NextButton"));
             }, 1000);
         }, 2000);
 
@@ -52,6 +72,7 @@ function CreatorStep() {
         Hide($("#Token"));
         Hide($("#CharacterName"));
         Hide($("#PlayerName"));
+        Hide($("#NextButton"));
         setTimeout(function () {
             FadeNewText("<b>Welcome, " + characterModel.CharacterName + ".</b>");
 
@@ -64,6 +85,7 @@ function CreatorStep() {
                     Show($("#Level"));
                     Show($("#ExperiencePoints"));
                     document.getElementById("NextButton").innerHTML = "I know what I am!";
+                    Show($("#NextButton"));
                 }, 1000);
             }, 2000);
 
@@ -144,10 +166,124 @@ function CreatorStep() {
             }, 1000);
         }, 500);
     }
-    else {
-        counter = 0;
+    else if (counter == 6) {
+        characterModel.CP = document.getElementById("CP").value;
+        characterModel.SP = document.getElementById("SP").value;
+        characterModel.GP = document.getElementById("GP").value;
+        characterModel.PP = document.getElementById("PP").value;
+        Hide($("#Equipment"));
+        Hide($("#EquipmentButton"));
+        Hide($("#CP"));
+        Hide($("#SP"));
+        Hide($("#GP"));
+        Hide($("#PP"));
+
+        setTimeout(function () {
+            FadeNewText("Time to be honest; How does your abilities score?");
+
+            setTimeout(function () {
+                Show($("#STR"));
+                Show($("#DEX"));
+                Show($("#CON"));
+                Show($("#INT"));
+                Show($("#WIS"));
+                Show($("#CHA"));
+                document.getElementById("NextButton").innerHTML = "I know my limits.";
+            }, 1000);
+        }, 500);
+    }
+    else if (counter == 7) {
+        characterModel.Strength = document.getElementById("STR").value;
+        characterModel.Dexterity = document.getElementById("DEX").value;
+        characterModel.Constitution = document.getElementById("CON").value;
+        characterModel.Intelligence = document.getElementById("INT").value;
+        characterModel.Wisdom = document.getElementById("WIS").value;
+        characterModel.Charisma = document.getElementById("CHA").value;
+        Hide($("#STR"));
+        Hide($("#DEX"));
+        Hide($("#CON"));
+        Hide($("#INT"));
+        Hide($("#WIS"));
+        Hide($("#CHA"));
+
+        setTimeout(function () {
+            FadeNewText("Some formalities...");
+
+            setTimeout(function () {
+                Show($("#AC"));
+                Show($("#Init"));
+                Show($("#Speed"));
+                Show($("#CurrentHP"));
+                Show($("#MaxHP"));
+                Show($("#HitDice"));
+                document.getElementById("NextButton").innerHTML = "I know...the small print?";
+            }, 1000);
+        }, 500);
+    }
+    else if (counter == 8) {
+        characterModel.ArmorClass = document.getElementById("AC").value;
+        characterModel.Initiative = document.getElementById("Init").value;
+        characterModel.Speed = document.getElementById("Speed").value;
+        characterModel.CurrentHP = document.getElementById("CurrentHP").value;
+        characterModel.MaxHP = document.getElementById("MaxHP").value;
+        characterModel.HitDice = document.getElementById("HitDice").value;
+        Hide($("#AC"));
+        Hide($("#Init"));
+        Hide($("#Speed"));
+        Hide($("#CurrentHP"));
+        Hide($("#MaxHP"));
+        Hide($("#HitDice"));
+
+        setTimeout(function () {
+            FadeNewText("Do you have anything final to add?");
+
+            setTimeout(function () {
+                Show($("#AttacksAndSpells"));
+                Show($("#FeatsAndTraits"));
+                Show($("#SkillProficiencies"));
+                Show($("#MiscNotes"));
+                Show($("#AttacksAndSpellsButton"));
+                Show($("#FeatsAndTraitsButton"));
+                Show($("#SkillProficienciesButton"));
+                Show($("#MiscNotesButton"));
+                document.getElementById("NextButton").innerHTML = "I know everything.";
+            }, 1000);
+        }, 500);
+    }
+    else if (counter == 9) {
+        Hide($("#AttacksAndSpells"));
+        Hide($("#FeatsAndTraits"));
+        Hide($("#SkillProficiencies"));
+        Hide($("#MiscNotes"));
+        Hide($("#AttacksAndSpellsButton"));
+        Hide($("#FeatsAndTraitsButton"));
+        Hide($("#SkillProficienciesButton"));
+        Hide($("#MiscNotesButton"));
+        Hide($("#NextButton"));
+
+
+        setTimeout(function () {
+            FadeNewText("<b>Alright then!</b>");
+
+            setTimeout(function () {
+                FadeNewText("Use your CIT to find your character again. <br />Your CIT is: '<b>" + characterModel.Token + "</b>', make sure to remember it! <br />Press 'OK' to save your character.");
+                document.getElementById("NextButton").innerHTML = "OK";
+                setTimeout(function () {
+                    Show($("#NextButton"));
+                }, 1000);
+
+            }, 2000);
+        }, 500);
 
     }
+    else if (counter == 10) {
+        SaveModel();
+        
+    }
+    else {
+        counter = 0;
+    }
+    
 
 
 }
@@ -194,4 +330,79 @@ function AddToEqList() {
         }, 2000);
    
 
+}
+
+function AddToAttacksList() {
+    characterModel.AttacksAndSpells.push(document.getElementById("AttacksAndSpells").value);
+    document.getElementById("AttacksAndSpells").value = "";
+    var oldText = document.getElementById("mainText").innerHTML;
+
+    FadeNewText("<b>" + characterModel.AttacksAndSpells[characterModel.AttacksAndSpells.length - 1] + "</b> has been added.");
+
+    setTimeout(function () {
+        FadeNewText(oldText);
+    }, 2000);
+
+}
+
+function AddToFeatsList() {
+    characterModel.FeatsAndTraits.push(document.getElementById("FeatsAndTraits").value);
+    document.getElementById("FeatsAndTraits").value = "";
+    var oldText = document.getElementById("mainText").innerHTML;
+
+    FadeNewText("<b>" + characterModel.FeatsAndTraits[characterModel.FeatsAndTraits.length - 1] + "</b> has been added.");
+
+    setTimeout(function () {
+        FadeNewText(oldText);
+    }, 2000);
+
+}
+
+function AddToSkillsList() {
+    characterModel.SkillProficiencies.push(document.getElementById("SkillProficiencies").value);
+    document.getElementById("SkillProficiencies").value = "";
+    var oldText = document.getElementById("mainText").innerHTML;
+
+    FadeNewText("<b>" + characterModel.SkillProficiencies[characterModel.SkillProficiencies.length - 1] + "</b> has been added.");
+
+    setTimeout(function () {
+        FadeNewText(oldText);
+    }, 2000);
+
+}
+function AddToMiscList() {
+    characterModel.MiscNotes.push(document.getElementById("MiscNotes").value);
+    document.getElementById("MiscNotes").value = "";
+    var oldText = document.getElementById("mainText").innerHTML;
+
+    FadeNewText("<b>" + characterModel.MiscNotes[characterModel.MiscNotes.length - 1] + "</b> has been added.");
+
+    setTimeout(function () {
+        FadeNewText(oldText);
+    }, 2000);
+
+}
+
+function SaveModel() {
+    var data = characterModel;
+    $.ajax({
+        type: 'POST',
+        url: '/Home/SaveCharacterModel',
+        data: data,
+        dataType: 'json',
+        success: function (result, status, xhr) {
+            if (result === "OK") {
+                window.location.href = "Success";
+            }
+            else {
+                alert(result);
+                location.reload();
+            }
+            
+        },
+        error: function (xhr, status, error) {
+            alert(error);
+            location.reload();
+        }
+    });
 }

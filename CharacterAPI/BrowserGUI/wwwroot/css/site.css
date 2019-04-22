@@ -70,7 +70,7 @@ body {
     position: absolute;
 }
 
-.btn-equipment {
+.btn-add {
     background-color: gray;
     color: black;
     border-color: black;
@@ -80,7 +80,7 @@ body {
     vertical-align: middle;
     padding: 3px; 
 }
-    .btn-equipment:hover {
+    .btn-add:hover {
         background-color: navy;
         color: lightgray;
     }
@@ -123,10 +123,7 @@ body {
 }
 
 
-.small-text-input{
-    width: 90px;
-    float: left;
-}
+
 
 
 
