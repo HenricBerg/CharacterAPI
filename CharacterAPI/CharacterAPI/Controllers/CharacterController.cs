@@ -8,7 +8,7 @@ namespace CharacterAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class CharacterController : ControllerBase
     {
         // GET api/values
         [HttpGet]
