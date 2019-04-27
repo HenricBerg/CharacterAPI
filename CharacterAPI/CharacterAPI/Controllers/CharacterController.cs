@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CharacterAPI.DataAccess;
+using CharacterAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CharacterAPI.Controllers
@@ -10,36 +12,48 @@ namespace CharacterAPI.Controllers
     [ApiController]
     public class CharacterController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        
+        [HttpGet("{cit}")]
+        public HttpResponseModel Get(string cit)
         {
-            return new string[] { "value1", "value2" };
+            return HttpResponseHelper.OK(XmlAccess.LoadFromFile(cit));
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
+        
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public HttpResponseModel Set([FromBody] CharacterModel characterModel)
         {
+            try
+            {
+                XmlAccess.SaveToFile(characterModel);
+                return HttpResponseHelper.OK("Character saved.");
+            }
+            catch (Exception ex)
+            {
+                return HttpResponseHelper.BadRequest("Error: "+ex.Message);
+            }
+                
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{cit}")]
+        public HttpResponseModel Edit(string cit, [FromBody] CharacterModel newModel)
         {
+            var oldModel = XmlAccess.LoadFromFile(cit);
+            newModel = DataFixer.OverwriteCharacter(oldModel, newModel); //Will check for blank values. These won't be replaced. This makes it possible to only edit small parts of the model at a time.
+            XmlAccess.DeleteFile(cit); //Delete existing model...
+            XmlAccess.SaveToFile(newModel); //...and save the updated model.
+            return HttpResponseHelper.OK("Character updated and saved.");
+
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{cit}")]
+        public HttpResponseModel Delete(string cit)
         {
+            XmlAccess.DeleteFile(cit);
+            return HttpResponseHelper.OK("Character removed.");
         }
     }
 }

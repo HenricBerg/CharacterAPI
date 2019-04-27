@@ -10,7 +10,7 @@ namespace CharacterAPI.Models
     {
 
         
-        public string Token { get; set; } = "N/A";
+        public string CIT { get; set; } = "N/A";
         public string CharacterName { get; set; } = "N/A";
         public string Class { get; set; } = "N/A";
         public string Level { get; set; } = "N/A";

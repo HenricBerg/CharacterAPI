@@ -3,6 +3,7 @@ using CharacterAPI.Models;
 using CharacterAPI.DataAccess;
 using Newtonsoft.Json;
 
+
 namespace BrowserGUI.Controllers
 {
     public class HomeController : Controller
@@ -12,17 +13,9 @@ namespace BrowserGUI.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult CreateCharacter(CharacterModel formInput)
+        public IActionResult EditCharacter()
         {
-            string response = XmlAccess.SaveToFile(formInput);
-
-            if (response == null)
-                return RedirectToAction("Success");
-            else
-                return RedirectToAction("Failed", "Home", new { error = response });
-
-
+            return View();
         }
 
         public IActionResult Success()
@@ -46,14 +39,55 @@ namespace BrowserGUI.Controllers
         {
 
             characterModel = DataFixer.CharacterModelFixer(characterModel);
-            object response = XmlAccess.SaveToFile(characterModel);
-            if (response == null)
+            object response;
+            try
+            {
+                XmlAccess.SaveToFile(characterModel);
                 response = "OK";
+            }
+            catch
+            {
+                response = "Error";
+            }
+            
 
             return JsonConvert.SerializeObject(response);
-           
 
-           
+
+
+        }
+
+        [HttpPost]
+        public string LoadCharacterModel(string cit)
+        {
+            CharacterModel model = new CharacterModel();
+            model = XmlAccess.LoadFromFile(cit.ToString());
+            return JsonConvert.SerializeObject(new { character = model }, Formatting.Indented);
+        }
+
+        [HttpPost]
+        public string ReplaceCharacterModel(CharacterModel newModel)
+        {
+
+            object response;
+
+            try
+            {
+                
+                response = "OK";
+                var oldModel = XmlAccess.LoadFromFile(newModel.CIT);
+                newModel = DataFixer.OverwriteCharacter(oldModel, newModel);
+                XmlAccess.DeleteFile(newModel.CIT);
+                XmlAccess.SaveToFile(newModel);
+            }
+            catch
+            {
+                response = "Error";
+            }
+
+
+            return JsonConvert.SerializeObject(response);
+
         }
 
 

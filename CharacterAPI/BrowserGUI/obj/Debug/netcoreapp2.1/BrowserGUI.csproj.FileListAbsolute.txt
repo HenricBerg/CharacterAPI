@@ -29,3 +29,4 @@ H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\bin\Debug\netcoreapp2.1\Char
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\bin\Debug\netcoreapp2.1\CharacterAPI.pdb
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Home\CreateCharacter.g.cshtml.cs
 H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+H:\Projekt\D&D\CharacterAPI\CharacterAPI\BrowserGUI\obj\Debug\netcoreapp2.1\Razor\Views\Home\EditCharacter.g.cshtml.cs

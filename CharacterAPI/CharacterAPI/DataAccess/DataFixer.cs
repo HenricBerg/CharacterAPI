@@ -9,14 +9,7 @@ namespace CharacterAPI.DataAccess
     public static class DataFixer
     {
 
-        public static string FixToken(string token)
-        {
-            if (token.Equals("N/A"))
-                return "temp";
-
-            return token;
-        }
-
+ 
         public static CharacterModel CharacterModelFixer(CharacterModel characterModel)
         {
 
@@ -35,5 +28,32 @@ namespace CharacterAPI.DataAccess
             return characterModel;
         }
 
+        public static CharacterModel OverwriteCharacter(CharacterModel oldModel, CharacterModel newModel)
+        {
+            foreach (var propertyInfo in newModel.GetType().GetProperties())
+            {
+                if (propertyInfo.PropertyType == typeof(string))
+                {
+                    var value = propertyInfo.GetValue(newModel, null);
+                    if (value == null || string.IsNullOrEmpty(value.ToString()))
+                    {
+                        try
+                        {
+                            var oldValue = oldModel.GetType().GetProperty(propertyInfo.Name).GetValue(oldModel, null);
+
+
+                            propertyInfo.SetValue(newModel, oldValue, null);
+                        }
+                        catch (Exception e)
+                        {
+                            var x = e;
+                        }
+                        
+                    }
+                }
+            }
+
+            return newModel;
+        }
     }
 }

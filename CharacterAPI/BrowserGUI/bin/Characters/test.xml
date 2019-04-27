@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CharacterModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CIT>test</CIT>
+  <CharacterName>Khargas</CharacterName>
+  <Class>Barbarian</Class>
+  <Level>1</Level>
+  <Background>Acolyte</Background>
+  <Alignment>Lawful good</Alignment>
+  <PlayerName>TestPlayer</PlayerName>
+  <ExperiencePoints>0</ExperiencePoints>
+  <Race>Dragonborn</Race>
+  <Strength>12</Strength>
+  <Dexterity>12</Dexterity>
+  <Constitution>13</Constitution>
+  <Intelligence>13</Intelligence>
+  <Wisdom>14</Wisdom>
+  <Charisma>14</Charisma>
+  <ArmorClass>16</ArmorClass>
+  <Initiative>2</Initiative>
+  <Speed>30</Speed>
+  <CurrentHP>10</CurrentHP>
+  <MaxHP>10</MaxHP>
+  <HitDice>d4</HitDice>
+  <DeathSaveSucc>N/A</DeathSaveSucc>
+  <DeathSaveFail>N/A</DeathSaveFail>
+  <CP>123</CP>
+  <SP>133</SP>
+  <GP>5435</GP>
+  <PP>4</PP>
+  <Backstory>no</Backstory>
+  <Age>Age</Age>
+  <Height>Height</Height>
+  <Weight>Weight</Weight>
+  <Eyes>Eyes</Eyes>
+  <Skin>Skin</Skin>
+  <Hair>Hair</Hair>
+  <SkillProficiencies>
+    <string>Prof3</string>
+  </SkillProficiencies>
+  <FeatsAndTraits>
+    <string>Trait2</string>
+  </FeatsAndTraits>
+  <MiscNotes>
+    <string>Misc4</string>
+  </MiscNotes>
+  <AttacksAndSpells>
+    <string>Spell1</string>
+  </AttacksAndSpells>
+  <Equipment>
+    <string>Item1</string>
+  </Equipment>
+</CharacterModel>

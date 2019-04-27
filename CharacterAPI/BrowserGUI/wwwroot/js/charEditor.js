@@ -1,6 +1,6 @@
-﻿var counter = 0; 
+﻿var counter = -1;
 var characterModel = {
-    Token: '',
+    CIT: '',
     CharacterName: '',
     Class: '',
     Level: '',
@@ -43,38 +43,77 @@ var characterModel = {
 
 
 function CreatorStep() {
+
+
+
     counter++;
 
-    if (counter == 1) {
+    if (counter == 0) {
         Hide($("#mainText"));
         Hide($("#IntroText"));
         Hide($("#NextButton"));
-        document.getElementById("mainText").innerHTML = "<b>Good. Thank you.</b>";
+        Hide($("#smallPrint"));
+        document.getElementById("mainText").innerHTML = "<b>Very well.</b>";
+
         Show($("#mainText"));
+        
 
 
         setTimeout(function () {
-            FadeNewText("First of all, tell me your names.");
+            FadeNewText("The well of souls demands a <b><i>true</i></b> name.");
             setTimeout(function () {
                 Show($("#CIT"));
-                Show($("#CharacterName"));
-                Show($("#PlayerName"));
-                document.getElementById("NextButton").innerHTML = "I know my own name!";
+                document.getElementById("NextButton").innerHTML = "I am an open book";
+                document.getElementById("smallPrint").innerHTML = "<i>If the requested info is unchanged, you may leave it blank.</i>";
                 Show($("#NextButton"));
             }, 1000);
         }, 2000);
 
     }
-    else if (counter == 2) {
+    else if (counter == 1) {
         characterModel.CIT = document.getElementById("CIT").value;
+        Hide($("#CIT"));
+        Hide($("#NextButton"));
+
+        setTimeout(function () {
+            FadeNewText("<b>Consulting the well...</b >");
+
+            LoadModel();
+
+            if (modelFound) {
+                setTimeout(function () {
+                    FadeNewText("<b>I see you, '" + characterModel.CharacterName + "'. I know you, " + characterModel.PlayerName + "</b >");
+
+                    setTimeout(function () {
+                        FadeNewText("But are these your real names?");
+                        setTimeout(function () {
+                            Show($("#smallPrint"));
+                            Show($("#CharacterName"));
+                            Show($("#PlayerName"));
+                            document.getElementById("NextButton").innerHTML = "I know my names.";
+                            Show($("#NextButton"));
+                        }, 1000);
+                    }, 2000);
+
+                }, 2000);
+            }
+
+           
+        }, 500);
+
+
+
+    }
+    else if (counter == 2) {
+
         characterModel.CharacterName = document.getElementById("CharacterName").value;
         characterModel.PlayerName = document.getElementById("PlayerName").value;
-        Hide($("#CIT"));
+     
         Hide($("#CharacterName"));
         Hide($("#PlayerName"));
         Hide($("#NextButton"));
         setTimeout(function () {
-            FadeNewText("<b>Welcome, " + characterModel.CharacterName + ".</b>");
+            FadeNewText("<b>Okay then, '<i>" + characterModel.CharacterName + "</i>'. Here we go...</b>"); //If charname == "" then...
 
             setTimeout(function () {
                 FadeNewText("What race are you? Are you an individual, experienced in adventuring? What role do you fulfill?");
@@ -100,7 +139,6 @@ function CreatorStep() {
         Hide($("#Class"));
         Hide($("#Level"));
         Hide($("#ExperiencePoints"));
-        Hide($("#NextButton"));
 
 
         setTimeout(function () {
@@ -111,7 +149,6 @@ function CreatorStep() {
                 Show($("#Backstory"));
                 Show($("#Alignment"));
                 document.getElementById("NextButton").innerHTML = "I know what I was.";
-                Show($("#NextButton"));
             }, 1000);
         }, 500);
 
@@ -124,7 +161,6 @@ function CreatorStep() {
         Hide($("#Background"));
         Hide($("#Backstory"));
         Hide($("#Alignment"));
-        Hide($("#NextButton"));
 
         setTimeout(function () {
             FadeNewText("What do you see when you look in a mirror?");
@@ -137,7 +173,6 @@ function CreatorStep() {
                 Show($("#Skin"));
                 Show($("#Hair"));
                 document.getElementById("NextButton").innerHTML = "I know how I look.";
-                Show($("#NextButton"));
             }, 1000);
         }, 500);
 
@@ -155,20 +190,18 @@ function CreatorStep() {
         Hide($("#Eyes"));
         Hide($("#Skin"));
         Hide($("#Hair"));
-        Hide($("#NextButton"));
 
         setTimeout(function () {
             FadeNewText("What earthly possesions do you have? Coin? Anything else of note?");
 
             setTimeout(function () {
                 Show($("#Equipment"));
-                Show($("#EquipmentButton"));
+                Show($("#EquipmentButton")); //Clear eq-list first.
                 Show($("#CP"));
                 Show($("#SP"));
                 Show($("#GP"));
                 Show($("#PP"));
                 document.getElementById("NextButton").innerHTML = "I know what I own.";
-                Show($("#NextButton"));
             }, 1000);
         }, 500);
     }
@@ -183,10 +216,8 @@ function CreatorStep() {
         Hide($("#SP"));
         Hide($("#GP"));
         Hide($("#PP"));
-        Hide($("#NextButton"));
 
         setTimeout(function () {
-            
             FadeNewText("Time to be honest; How does your abilities score?");
 
             setTimeout(function () {
@@ -197,7 +228,6 @@ function CreatorStep() {
                 Show($("#WIS"));
                 Show($("#CHA"));
                 document.getElementById("NextButton").innerHTML = "I know my limits.";
-                Show($("#NextButton"));
             }, 1000);
         }, 500);
     }
@@ -214,7 +244,6 @@ function CreatorStep() {
         Hide($("#INT"));
         Hide($("#WIS"));
         Hide($("#CHA"));
-        Hide($("#NextButton"));
 
         setTimeout(function () {
             FadeNewText("Some formalities...");
@@ -227,7 +256,6 @@ function CreatorStep() {
                 Show($("#MaxHP"));
                 Show($("#HitDice"));
                 document.getElementById("NextButton").innerHTML = "I know...the small print?";
-                Show($("#NextButton"));
             }, 1000);
         }, 500);
     }
@@ -244,13 +272,12 @@ function CreatorStep() {
         Hide($("#CurrentHP"));
         Hide($("#MaxHP"));
         Hide($("#HitDice"));
-        Hide($("#NextButton"));
 
         setTimeout(function () {
             FadeNewText("Do you have anything final to add?");
 
             setTimeout(function () {
-                Show($("#AttacksAndSpells"));
+                Show($("#AttacksAndSpells")); //Clear lists first
                 Show($("#FeatsAndTraits"));
                 Show($("#SkillProficiencies"));
                 Show($("#MiscNotes"));
@@ -259,7 +286,6 @@ function CreatorStep() {
                 Show($("#SkillProficienciesButton"));
                 Show($("#MiscNotesButton"));
                 document.getElementById("NextButton").innerHTML = "I know everything.";
-                Show($("#NextButton"));
             }, 1000);
         }, 500);
     }
@@ -272,7 +298,6 @@ function CreatorStep() {
         Hide($("#FeatsAndTraitsButton"));
         Hide($("#SkillProficienciesButton"));
         Hide($("#MiscNotesButton"));
-        Hide($("#NextButton"));
         Hide($("#NextButton"));
 
 
@@ -292,12 +317,12 @@ function CreatorStep() {
     }
     else if (counter == 10) {
         SaveModel();
-        
+
     }
     else {
         counter = 0;
     }
-    
+
 
 
 }
@@ -403,7 +428,7 @@ function SaveModel() {
     var data = characterModel;
     $.ajax({
         type: 'POST',
-        url: '/Home/SaveCharacterModel',
+        url: '/Home/ReplaceCharacterModel',
         data: data,
         dataType: 'json',
         success: function (result, status, xhr) {
@@ -411,14 +436,60 @@ function SaveModel() {
                 window.location.href = "Success";
             }
             else {
-                alert(result);
-                location.reload();
+                modelFound = false;
+                FadeNewText("<b>Something went wrong. My apologies.</b>");
+                Hide($("#NextButton"));
+                setTimeout(function () {
+                    Show($("#ReloadButton"));
+                }, 2000);
             }
-            
+
         },
         error: function (xhr, status, error) {
             alert(error);
             location.reload();
         }
     });
+}
+
+var modelFound = true;
+function LoadModel() {
+    
+    $.ajax({
+        type: 'POST',
+        url: '/Home/LoadCharacterModel',
+        data: { cit: characterModel.CIT },
+        async: false,
+        dataType: 'json',
+        success: function (result, status, xhr) {
+            characterModel = result.character;
+
+            if (characterModel.CIT === "N/A") {
+
+                modelFound = false;
+                FadeNewText("<b>You are not one of mine. Begone, fool.</b>");
+                Hide($("#NextButton"));
+                setTimeout(function () {
+                    Show($("#ReloadButton"));
+                }, 2000);
+            }
+            
+            
+
+           
+        },
+        error: function (xhr, status, error) {
+            modelFound = false;
+            FadeNewText("<b>You are not one of mine. Begone, fool.</b>");
+            Hide($("#NextButton"));
+            setTimeout(function () {
+                Show($("#ReloadButton"));
+            }, 2000);
+            
+        }
+    });
+}
+
+function Reload() {
+    location.reload();
 }

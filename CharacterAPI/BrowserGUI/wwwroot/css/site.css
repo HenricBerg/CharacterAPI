@@ -65,9 +65,10 @@ body {
     background-color: gray;
     color: black;
     border-color: black;
-    bottom: 0px;
-    right: 10px;
-    position: absolute;
+    
+
+    bottom: 0;
+    right: 0;
 }
 
 .btn-add {
@@ -76,8 +77,8 @@ body {
     border-color: black;
     height: 33px;
     
-    display: table-cell;
-    vertical-align: middle;
+    
+    
     padding: 3px; 
 }
     .btn-add:hover {
@@ -103,7 +104,8 @@ body {
 }
 
 .work-area{
-    height: 35vh;
+    height: 50vh;
+    width: 50vw;
 }
 
 .body-content{
@@ -126,36 +128,6 @@ body {
 
 
 
-
-@media screen and (max-width: 991px) {
-    /* start of large tablet styles */
-    .work-area {
-        height: 35vh;
-    }
-}
-
-@media screen and (max-height: 440px) {
-
-    .work-area {
-        height: 35vh;
-    }
-}
-
-@media screen and (max-width: 991px) and (max-height: 500px) {
-    /* start of large tablet styles */
-    .work-area {
-        height: 35vh;
-    }
-}
-
-
-@media screen and (max-width: 479px) {
-    /* start of phone styles */
-
-    .work-area {
-        height: 35vh;
-    }
-}
 
 
 

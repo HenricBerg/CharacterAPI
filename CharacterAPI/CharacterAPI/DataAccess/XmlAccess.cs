@@ -8,51 +8,47 @@ namespace CharacterAPI.DataAccess
     public static class XmlAccess
     {
 
-        public static CharacterModel LoadFromFile(string Token)
+        public static CharacterModel LoadFromFile(string cit)
         {
             var character = new CharacterModel();
-            Token = Token + ".xml";
-            try
+            cit = @"bin/Characters/" + cit + ".xml";
+
+            var serializer = new XmlSerializer(typeof(CharacterModel));
+
+            if (File.Exists(cit))
             {
-                var serializer = new XmlSerializer(typeof(CharacterModel));
-
-                if (File.Exists(Token))
+                using (var stream = new StreamReader(cit))
                 {
-                    using (var stream = new StreamReader(Token))
-                    {
-                        character = (CharacterModel)serializer.Deserialize(stream);
+                    character = (CharacterModel)serializer.Deserialize(stream);
 
-                    }
                 }
             }
-            catch
-            {
-                character.CharacterName = "Unable to load character.";
-            }
+
 
             return character;
         }
 
-        public static string SaveToFile(CharacterModel character)
+        public static void SaveToFile(CharacterModel character)
         {
-
-            var token = DataFixer.FixToken(character.Token);
-
-            try
+            var serializer = new XmlSerializer(typeof(CharacterModel));
+            var cit = @"bin/Characters/" + character.CIT + ".xml";
+            using (var stream = new StreamWriter(cit))
             {
-                var serializer = new XmlSerializer(typeof(CharacterModel));
-                string path = @"bin/Characters/"+ token + ".xml";
-                using (var stream = new StreamWriter(path))
-                {
-                    serializer.Serialize(stream, character);
-                }
-
-                return null;
-
+                serializer.Serialize(stream, character);
             }
-            catch (Exception ex)
+        }
+
+        public static void DeleteFile(string cit)
+        {
+            string path = @"bin/Characters/" + cit + ".xml";
+
+            if (File.Exists(path))
             {
-                return ex.Message;
+                File.Delete(path);
+            }
+            else
+            {
+                throw new NotFoundException();
             }
         }
     }
